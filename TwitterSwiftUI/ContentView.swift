@@ -8,14 +8,40 @@
 import SwiftUI
 
 struct ContentView: View {
+    
+//    init(){
+//        UINavigationBar.appearance().backgroundColor = .gray
+//        UITabBar.appearance().backgroundColor = .gray
+//        }
+    
     var body: some View {
-        VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+        
+        NavigationView {
+            TabView {
+                Text("Feed")
+                    .tabItem {
+                        Text("Home")
+                        Image(systemName: "house")
+                    }
+                
+                Text("Search View")
+                    .tabItem {
+                        Text("Search")
+                        Image(systemName: "magnifyingglass")
+                    }
+                
+                Text("Messages")
+                    .tabItem {
+                        Text("Messages")
+                        Image(systemName: "envelope")
+                    }
+            }
+            .navigationTitle("Home")
+            .navigationBarTitleDisplayMode(.inline)
+            
         }
-        .padding()
+        
+        
     }
 }
 
