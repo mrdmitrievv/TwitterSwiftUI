@@ -9,10 +9,11 @@ import SwiftUI
 
 struct ContentView: View {
     
-//    init(){
-//        UINavigationBar.appearance().backgroundColor = .gray
-//        UITabBar.appearance().backgroundColor = .gray
-//        }
+    let uiColor = UIColor(red: 242/255, green: 242/255, blue: 242/255, alpha: 1)
+    
+    init(){
+        UITabBar.appearance().backgroundColor = uiColor
+        }
     
     var body: some View {
         
@@ -38,10 +39,9 @@ struct ContentView: View {
             }
             .navigationTitle("Home")
             .navigationBarTitleDisplayMode(.inline)
-            
-        }
-        
-        
+            .toolbarBackground(Color(uiColor: uiColor), for: .navigationBar)
+            .toolbarBackground(.visible, for: .navigationBar)
+        }        
     }
 }
 
