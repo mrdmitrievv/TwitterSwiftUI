@@ -20,10 +20,10 @@ struct TweetCell: View {
                     .clipShape(Circle())
                     .padding(.trailing, 5)
                 
-                VStack(alignment: .leading, spacing: 5) {
+                VStack(alignment: .leading, spacing: 4) {
                     HStack {
                         Text("Bruce Wayne")
-                            .bold()
+                            .font(.system(size: 14, weight: .semibold))
                         Text("@batman •")
                             .foregroundColor(.gray)
                         Text("27w")
@@ -32,27 +32,33 @@ struct TweetCell: View {
                     
                     Text("It's not who I am underneath, but what I do that defines me")
                 }
-            }
-            .padding(.bottom, 25)
+            }        
             
             HStack {
                 Image(systemName: "bubble.left")
+                    .font(.system(size: 16))
+                    .frame(width: 32, height: 32)
                 
                 Spacer()
                 
                 Image(systemName: "arrow.2.squarepath")
+                    .font(.system(size: 16))
+                    .frame(width: 32, height: 32)
                 
                 Spacer()
                 
                 Image(systemName: "heart")
+                    .font(.system(size: 16))
+                    .frame(width: 32, height: 32)
                 
                 Spacer()
                 
                 Image(systemName: "bookmark")
+                    .font(.system(size: 16))
+                    .frame(width: 32, height: 32)
             }
-            .padding(.horizontal, 30)
-            .padding(.bottom, 10)
             .foregroundColor(.gray)
+            .padding(.bottom, -5)
             
             Divider()
         }

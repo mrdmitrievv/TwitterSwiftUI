@@ -19,7 +19,9 @@ struct FeedView: View {
                         TweetCell()
                     }
                     
-                }.padding()
+                }
+                .padding(.vertical)
+                .padding(.horizontal, 14)
             }
             
             Button(action: {}) {
