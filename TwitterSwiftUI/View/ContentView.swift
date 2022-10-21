@@ -19,7 +19,7 @@ struct ContentView: View {
         
         NavigationView {
             TabView {
-                Text("Feed")
+                FeedView()
                     .tabItem {
                         Text("Home")
                         Image(systemName: "house")
@@ -41,7 +41,7 @@ struct ContentView: View {
             .navigationBarTitleDisplayMode(.inline)
             .toolbarBackground(Color(uiColor: uiColor), for: .navigationBar)
             .toolbarBackground(.visible, for: .navigationBar)
-        }        
+        }
     }
 }
 
