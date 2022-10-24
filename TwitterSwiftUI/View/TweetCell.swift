@@ -11,7 +11,7 @@ struct TweetCell: View {
     var body: some View {
         
         VStack {
-        
+            
             HStack(alignment: .top) {
                 Image("batman")
                     .resizable()
@@ -32,9 +32,10 @@ struct TweetCell: View {
                     
                     Text("It's not who I am underneath, but what I do that defines me")
                 }
-            }        
+            }
             
             HStack {
+                
                 Image(systemName: "bubble.left")
                     .font(.system(size: 16))
                     .frame(width: 32, height: 32)
