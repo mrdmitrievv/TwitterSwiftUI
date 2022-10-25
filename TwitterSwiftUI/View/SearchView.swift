@@ -11,20 +11,19 @@ struct SearchView: View {
     @State var text = ""
     
     var body: some View {
-        ScrollView {
-            VStack {
-                SearchBar(text: $text)
-                    .padding(.top)
-                    .padding(.horizontal, 5)
-                
-                VStack(alignment: .leading) {
-                    ForEach(0..<20) { _ in
-                        HStack {
-                            Spacer()
-                        }
-                        UserCell()
-                    }.padding(.leading)
-                }
+        VStack {
+            SearchBar(text: $text)
+                .padding(.top)
+                .padding(.horizontal, 5)
+            ScrollView {                                       
+                    VStack(alignment: .leading) {
+                        ForEach(0..<20) { _ in
+                            HStack {
+                                Spacer()
+                            }
+                            UserCell()
+                        }.padding(.leading)
+                    }
             }
         }
         
