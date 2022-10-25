@@ -25,7 +25,10 @@ struct ConversationCell: View {
                     }
                     Text("Longer messages text to see what happens when I do this")
                 }
-            }.padding(.trailing)
+                .multilineTextAlignment(.leading)
+                .foregroundColor(.black)
+            }
+            .padding(.trailing)
             
             Divider()
         }
