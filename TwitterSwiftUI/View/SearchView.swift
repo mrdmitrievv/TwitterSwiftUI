@@ -15,7 +15,7 @@ struct SearchView: View {
             VStack {
                 SearchBar(text: $text)
                     .padding(.top)
-                    .padding(.horizontal)
+                    .padding(.horizontal, 5)
                 
                 VStack(alignment: .leading) {
                     ForEach(0..<20) { _ in
