@@ -15,15 +15,33 @@ struct ChatView: View {
         VStack {
             ScrollView {
                 VStack(alignment: .leading, spacing: 12) {
-                    ForEach(0..<30) { _ in
-                        HStack {
-                            Spacer()
-                            Text("This is place for message bubbles")
-                                .padding()
-                                .background(Color(.systemBlue))
-                                .foregroundColor(.white)
-                                .clipShape(ChatBubble(isFromCurrentUser: true))
+                    ForEach(MOCK_MESSAGES) { message in
+                        
+                        if message.isFromCurrentUser {
+                            HStack {
+                                Spacer()
+                                Text(message.messageText)
+                                    .padding()
+                                    .background(Color(.systemBlue))
+                                    .foregroundColor(.white)
+                                    .clipShape(ChatBubble(isFromCurrentUser: true))
+                            }
+                        } else {
+                            HStack {
+                                Image(message.imageName)
+                                    .resizable()
+                                    .scaledToFill()
+                                    .frame(width: 40, height: 40)
+                                    .clipShape(Circle())
+                                
+                                Text(message.messageText)
+                                    .padding()
+                                    .background(Color(.systemGray5))
+                                    .foregroundColor(.black)
+                                    .clipShape(ChatBubble(isFromCurrentUser: true))
+                            }
                         }
+                        
                     }
                     .padding(.horizontal)
                 }

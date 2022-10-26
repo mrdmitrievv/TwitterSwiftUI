@@ -21,6 +21,7 @@
 		ABA5126A2908767900FCA832 /* MessageInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA512692908767900FCA832 /* MessageInputView.swift */; };
 		ABA5126C2908768100FCA832 /* ChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA5126B2908768100FCA832 /* ChatView.swift */; };
 		ABA5126E29096DB700FCA832 /* ChatBubble.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA5126D29096DB700FCA832 /* ChatBubble.swift */; };
+		ABA5127029098C4A00FCA832 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA5126F29098C4A00FCA832 /* Message.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +40,7 @@
 		ABA512692908767900FCA832 /* MessageInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageInputView.swift; sourceTree = "<group>"; };
 		ABA5126B2908768100FCA832 /* ChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatView.swift; sourceTree = "<group>"; };
 		ABA5126D29096DB700FCA832 /* ChatBubble.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatBubble.swift; sourceTree = "<group>"; };
+		ABA5126F29098C4A00FCA832 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -125,6 +127,7 @@
 		AB863CE72901B1AA00D39360 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				ABA5126F29098C4A00FCA832 /* Message.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -208,6 +211,7 @@
 				AB863CEB2902B78200D39360 /* TweetCell.swift in Sources */,
 				ABA5126E29096DB700FCA832 /* ChatBubble.swift in Sources */,
 				AB863CEF290703EA00D39360 /* SearchBar.swift in Sources */,
+				ABA5127029098C4A00FCA832 /* Message.swift in Sources */,
 				AB863CF129070C0F00D39360 /* UserCell.swift in Sources */,
 				AB5B262E29083B8200CACA10 /* ConversationView.swift in Sources */,
 				AB5B263029083B8F00CACA10 /* ConversationCell.swift in Sources */,
