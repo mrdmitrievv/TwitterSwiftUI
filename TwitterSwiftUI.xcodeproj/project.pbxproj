@@ -20,6 +20,7 @@
 		AB863CF129070C0F00D39360 /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB863CF029070C0E00D39360 /* UserCell.swift */; };
 		ABA5126A2908767900FCA832 /* MessageInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA512692908767900FCA832 /* MessageInputView.swift */; };
 		ABA5126C2908768100FCA832 /* ChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA5126B2908768100FCA832 /* ChatView.swift */; };
+		ABA5126E29096DB700FCA832 /* ChatBubble.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA5126D29096DB700FCA832 /* ChatBubble.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,6 +38,7 @@
 		AB863CF029070C0E00D39360 /* UserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = "<group>"; };
 		ABA512692908767900FCA832 /* MessageInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageInputView.swift; sourceTree = "<group>"; };
 		ABA5126B2908768100FCA832 /* ChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatView.swift; sourceTree = "<group>"; };
+		ABA5126D29096DB700FCA832 /* ChatBubble.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatBubble.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,8 +94,9 @@
 			children = (
 				AB5B262D29083B8200CACA10 /* ConversationView.swift */,
 				AB5B262F29083B8F00CACA10 /* ConversationCell.swift */,
-				ABA5126B2908768100FCA832 /* ChatView.swift */,
 				ABA512692908767900FCA832 /* MessageInputView.swift */,
+				ABA5126B2908768100FCA832 /* ChatView.swift */,
+				ABA5126D29096DB700FCA832 /* ChatBubble.swift */,
 			);
 			path = Messages;
 			sourceTree = "<group>";
@@ -203,6 +206,7 @@
 				ABA5126C2908768100FCA832 /* ChatView.swift in Sources */,
 				AB2580B52901490C00C2B80B /* TwitterSwiftUIApp.swift in Sources */,
 				AB863CEB2902B78200D39360 /* TweetCell.swift in Sources */,
+				ABA5126E29096DB700FCA832 /* ChatBubble.swift in Sources */,
 				AB863CEF290703EA00D39360 /* SearchBar.swift in Sources */,
 				AB863CF129070C0F00D39360 /* UserCell.swift in Sources */,
 				AB5B262E29083B8200CACA10 /* ConversationView.swift in Sources */,
