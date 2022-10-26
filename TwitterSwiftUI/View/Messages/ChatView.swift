@@ -16,32 +16,7 @@ struct ChatView: View {
             ScrollView {
                 VStack(alignment: .leading, spacing: 12) {
                     ForEach(MOCK_MESSAGES) { message in
-                        
-                        if message.isFromCurrentUser {
-                            HStack {
-                                Spacer()
-                                Text(message.messageText)
-                                    .padding()
-                                    .background(Color(.systemBlue))
-                                    .foregroundColor(.white)
-                                    .clipShape(ChatBubble(isFromCurrentUser: true))
-                            }
-                        } else {
-                            HStack {
-                                Image(message.imageName)
-                                    .resizable()
-                                    .scaledToFill()
-                                    .frame(width: 40, height: 40)
-                                    .clipShape(Circle())
-                                
-                                Text(message.messageText)
-                                    .padding()
-                                    .background(Color(.systemGray5))
-                                    .foregroundColor(.black)
-                                    .clipShape(ChatBubble(isFromCurrentUser: true))
-                            }
-                        }
-                        
+                        MessageView(message: message)
                     }
                     .padding(.horizontal)
                 }

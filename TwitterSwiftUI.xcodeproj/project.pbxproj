@@ -22,6 +22,7 @@
 		ABA5126C2908768100FCA832 /* ChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA5126B2908768100FCA832 /* ChatView.swift */; };
 		ABA5126E29096DB700FCA832 /* ChatBubble.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA5126D29096DB700FCA832 /* ChatBubble.swift */; };
 		ABA5127029098C4A00FCA832 /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA5126F29098C4A00FCA832 /* Message.swift */; };
+		ABA512722909925300FCA832 /* MessageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA512712909925200FCA832 /* MessageView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +42,7 @@
 		ABA5126B2908768100FCA832 /* ChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatView.swift; sourceTree = "<group>"; };
 		ABA5126D29096DB700FCA832 /* ChatBubble.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatBubble.swift; sourceTree = "<group>"; };
 		ABA5126F29098C4A00FCA832 /* Message.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Message.swift; sourceTree = "<group>"; };
+		ABA512712909925200FCA832 /* MessageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +101,7 @@
 				ABA512692908767900FCA832 /* MessageInputView.swift */,
 				ABA5126B2908768100FCA832 /* ChatView.swift */,
 				ABA5126D29096DB700FCA832 /* ChatBubble.swift */,
+				ABA512712909925200FCA832 /* MessageView.swift */,
 			);
 			path = Messages;
 			sourceTree = "<group>";
@@ -214,6 +217,7 @@
 				ABA5127029098C4A00FCA832 /* Message.swift in Sources */,
 				AB863CF129070C0F00D39360 /* UserCell.swift in Sources */,
 				AB5B262E29083B8200CACA10 /* ConversationView.swift in Sources */,
+				ABA512722909925300FCA832 /* MessageView.swift in Sources */,
 				AB5B263029083B8F00CACA10 /* ConversationCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
