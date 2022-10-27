@@ -18,10 +18,12 @@ struct SearchView: View {
             ScrollView {                                       
                     VStack(alignment: .leading) {
                         ForEach(0..<20) { _ in
-                            HStack {
-                                Spacer()
+                            NavigationLink(destination: UserProfileView()) {
+                                HStack {
+                                    UserCell()
+                                    Spacer()
+                                }
                             }
-                            UserCell()
                         }.padding(.leading)
                     }
             }

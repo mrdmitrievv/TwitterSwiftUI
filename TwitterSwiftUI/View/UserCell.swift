@@ -24,6 +24,7 @@ struct UserCell: View {
                     .font(.system(size: 14))
                     .multilineTextAlignment(.leading)
             }
+            .foregroundColor(.black)
         }
     }
 }
