@@ -9,12 +9,14 @@ import SwiftUI
 
 struct NewTweetView: View {
     
+    @State var text: String = ""
+    
     @Binding var isNewTweetViewShown: Bool
     
     var body: some View {
         NavigationView {
             VStack {
-                HStack {
+                HStack(alignment: .top) {
                     Image("spiderman")
                         .resizable()
                         .scaledToFill()
@@ -22,14 +24,11 @@ struct NewTweetView: View {
                         .clipShape(Circle())
                         .padding(.trailing, 5)
                     
-                    Text("What's happening?")
-                        .foregroundColor(.gray)
+                    TextArea("What's happening?", text: $text)
                     
                     Spacer()
                 }
                 .padding()
-                
-                Spacer()
                 
                 .navigationBarItems(
                     leading:

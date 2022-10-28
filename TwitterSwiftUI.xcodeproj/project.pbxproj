@@ -29,6 +29,7 @@
 		ABA910C4290A8FB60068548F /* ProfileActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA910C3290A8FB60068548F /* ProfileActionButton.swift */; };
 		ABA910C6290A8FE90068548F /* FilterButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA910C5290A8FE90068548F /* FilterButtonView.swift */; };
 		ABA910C9290C32BC0068548F /* NewTweetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA910C8290C32BC0068548F /* NewTweetView.swift */; };
+		ABA910CD290C3BAD0068548F /* TextArea.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA910CC290C3BAD0068548F /* TextArea.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -55,6 +56,7 @@
 		ABA910C3290A8FB60068548F /* ProfileActionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileActionButton.swift; sourceTree = "<group>"; };
 		ABA910C5290A8FE90068548F /* FilterButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterButtonView.swift; sourceTree = "<group>"; };
 		ABA910C8290C32BC0068548F /* NewTweetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTweetView.swift; sourceTree = "<group>"; };
+		ABA910CC290C3BAD0068548F /* TextArea.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextArea.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +89,7 @@
 		AB2580B32901490C00C2B80B /* TwitterSwiftUI */ = {
 			isa = PBXGroup;
 			children = (
+				ABA910CA290C3B960068548F /* Utils */,
 				AB863CE72901B1AA00D39360 /* Model */,
 				AB863CE62901B1A900D39360 /* View */,
 				AB863CE52901B19F00D39360 /* ViewModels */,
@@ -169,6 +172,22 @@
 			path = Tweets;
 			sourceTree = "<group>";
 		};
+		ABA910CA290C3B960068548F /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				ABA910CB290C3B9B0068548F /* View */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		ABA910CB290C3B9B0068548F /* View */ = {
+			isa = PBXGroup;
+			children = (
+				ABA910CC290C3BAD0068548F /* TextArea.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -240,6 +259,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AB863CED2907031B00D39360 /* SearchView.swift in Sources */,
+				ABA910CD290C3BAD0068548F /* TextArea.swift in Sources */,
 				ABA5126A2908767900FCA832 /* MessageInputView.swift in Sources */,
 				AB2580B72901490C00C2B80B /* ContentView.swift in Sources */,
 				AB863CE92901BDFB00D39360 /* FeedView.swift in Sources */,
