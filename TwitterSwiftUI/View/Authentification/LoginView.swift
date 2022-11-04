@@ -23,16 +23,18 @@ struct LoginView: View {
             VStack(spacing: 20) {
                 CustomTextField(text: $email, placeholder: Text("Email"), systemImageName: "envelope")
                     .padding()
+                    .padding(.vertical, -5)
                     .background(Color(white: 1, opacity: 0.15))
                     .cornerRadius(10)
                 
                 CustomTextField(text: $password, placeholder: Text("Password"), systemImageName: "lock")
                      .padding()
+                     .padding(.vertical, -5)
                      .background(Color(white: 1, opacity: 0.15))
                      .cornerRadius(10)
             }
             .padding(.top, -20)
-            .padding(.horizontal)
+            .padding(.horizontal, 25)
             
             Spacer()
         }
