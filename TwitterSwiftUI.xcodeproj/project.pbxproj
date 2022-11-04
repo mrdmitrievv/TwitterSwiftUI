@@ -13,6 +13,8 @@
 		AB2580BC2901490E00C2B80B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AB2580BB2901490E00C2B80B /* Preview Assets.xcassets */; };
 		AB5B262E29083B8200CACA10 /* ConversationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB5B262D29083B8200CACA10 /* ConversationView.swift */; };
 		AB5B263029083B8F00CACA10 /* ConversationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB5B262F29083B8F00CACA10 /* ConversationCell.swift */; };
+		AB7F986A29156A4200CEF734 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB7F986929156A4200CEF734 /* LoginView.swift */; };
+		AB7F986C29156A4F00CEF734 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB7F986B29156A4F00CEF734 /* CustomTextField.swift */; };
 		AB863CE92901BDFB00D39360 /* FeedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB863CE82901BDFB00D39360 /* FeedView.swift */; };
 		AB863CEB2902B78200D39360 /* TweetCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB863CEA2902B78200D39360 /* TweetCell.swift */; };
 		AB863CED2907031B00D39360 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB863CEC2907031B00D39360 /* SearchView.swift */; };
@@ -40,6 +42,8 @@
 		AB2580BB2901490E00C2B80B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		AB5B262D29083B8200CACA10 /* ConversationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationView.swift; sourceTree = "<group>"; };
 		AB5B262F29083B8F00CACA10 /* ConversationCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversationCell.swift; sourceTree = "<group>"; };
+		AB7F986929156A4200CEF734 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		AB7F986B29156A4F00CEF734 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		AB863CE82901BDFB00D39360 /* FeedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedView.swift; sourceTree = "<group>"; };
 		AB863CEA2902B78200D39360 /* TweetCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweetCell.swift; sourceTree = "<group>"; };
 		AB863CEC2907031B00D39360 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
@@ -122,6 +126,14 @@
 			path = Messages;
 			sourceTree = "<group>";
 		};
+		AB7F986829156A2700CEF734 /* Authentification */ = {
+			isa = PBXGroup;
+			children = (
+				AB7F986929156A4200CEF734 /* LoginView.swift */,
+			);
+			path = Authentification;
+			sourceTree = "<group>";
+		};
 		AB863CE52901B19F00D39360 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
@@ -132,6 +144,7 @@
 		AB863CE62901B1A900D39360 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				AB7F986829156A2700CEF734 /* Authentification */,
 				ABA910C7290C32A00068548F /* Tweets */,
 				ABA910BE290A8F8A0068548F /* Profile */,
 				AB5B262C29083B6E00CACA10 /* Messages */,
@@ -184,6 +197,7 @@
 			isa = PBXGroup;
 			children = (
 				ABA910CC290C3BAD0068548F /* TextArea.swift */,
+				AB7F986B29156A4F00CEF734 /* CustomTextField.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -262,10 +276,12 @@
 				ABA910CD290C3BAD0068548F /* TextArea.swift in Sources */,
 				ABA5126A2908767900FCA832 /* MessageInputView.swift in Sources */,
 				AB2580B72901490C00C2B80B /* ContentView.swift in Sources */,
+				AB7F986C29156A4F00CEF734 /* CustomTextField.swift in Sources */,
 				AB863CE92901BDFB00D39360 /* FeedView.swift in Sources */,
 				ABA910C2290A8FA70068548F /* ProfileHeaderView.swift in Sources */,
 				ABA5126C2908768100FCA832 /* ChatView.swift in Sources */,
 				AB2580B52901490C00C2B80B /* TwitterSwiftUIApp.swift in Sources */,
+				AB7F986A29156A4200CEF734 /* LoginView.swift in Sources */,
 				ABA910C9290C32BC0068548F /* NewTweetView.swift in Sources */,
 				ABA910C6290A8FE90068548F /* FilterButtonView.swift in Sources */,
 				AB863CEB2902B78200D39360 /* TweetCell.swift in Sources */,
