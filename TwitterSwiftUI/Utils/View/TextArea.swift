@@ -15,23 +15,23 @@ struct TextArea: View {
     init(_ placeholder: String, text: Binding<String>) {
         self._text = text
         self.placeholder = placeholder
-        UITextView.appearance().backgroundColor = .clear
     }
     
     var body: some View {
-        ZStack {
-            
-//            Text(placeholder)
+        ZStack(alignment: .topLeading) {
             
             if text.isEmpty {
+                
                 Text(placeholder)
                     .foregroundColor(Color(.placeholderText))
                     .padding(.horizontal, 8)
-                    .padding(.vertical, 12)
+                .padding(.vertical, 12)
             }
             
             TextEditor(text: $text)
                 .padding(4)
-        }.font(.body)
+                .opacity(text.isEmpty ? 0.25 : 1)
+        }
+        .font(.body)
     }
 }
