@@ -13,17 +13,23 @@ struct RegistrationView: View {
     @State var password = ""
     @State var fullname = ""
     @State var username = ""
+    @State var isImagePickerPresented = false
     @Environment(\.presentationMode) var mode: Binding<PresentationMode>
     
     var body: some View {
         VStack {
-            Image("plus_photo")
-                .resizable()
-                .renderingMode(.template)
-                .scaledToFill()
-                .frame(width: 100, height: 100)
-                .padding(.top)
-                .foregroundColor(.white)
+            
+            Button(action: { isImagePickerPresented.toggle() }) {
+                Image("plus_photo")
+                    .resizable()
+                    .renderingMode(.template)
+                    .scaledToFill()
+                    .frame(width: 100, height: 100)
+                    .padding(.top)
+                    .foregroundColor(.white)
+            }.sheet(isPresented: $isImagePickerPresented) {
+                ImagePicker()
+            }
                     
             VStack(spacing: 20) {
                 
