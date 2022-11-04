@@ -14,23 +14,42 @@ struct RegistrationView: View {
     @State var fullname = ""
     @State var username = ""
     @State var isImagePickerPresented = false
+    @State var choosenUIImage: UIImage?
+    @State var image: Image?
     @Environment(\.presentationMode) var mode: Binding<PresentationMode>
+    
+    private func convertUIImage() {
+        guard let uiImage = choosenUIImage else { return }
+        image = Image(uiImage: uiImage)
+    }
     
     var body: some View {
         VStack {
             
             Button(action: { isImagePickerPresented.toggle() }) {
-                Image("plus_photo")
-                    .resizable()
-                    .renderingMode(.template)
-                    .scaledToFill()
-                    .frame(width: 100, height: 100)
-                    .padding(.top)
-                    .foregroundColor(.white)
-            }.sheet(isPresented: $isImagePickerPresented) {
-                ImagePicker()
+                ZStack {
+                    if let image = image {
+                        image
+                            .resizable()
+                            .scaledToFill()
+                            .frame(width: 100, height: 100)
+                            .clipped()
+                            .cornerRadius(50)
+                            .padding(.top)
+                    } else {
+                        Image("plus_photo")
+                            .resizable()
+                            .renderingMode(.template)
+                            .scaledToFill()
+                            .frame(width: 100, height: 100)
+                            .padding(.top)
+                            .foregroundColor(.white)
+                    }                                        
+                }
+            }.sheet(isPresented: $isImagePickerPresented, onDismiss: convertUIImage) {
+                ImagePicker(image: $choosenUIImage)
             }
-                    
+            
             VStack(spacing: 20) {
                 
                 CustomTextField(text: $fullname, placeholder: Text("Full Name"), systemImageName: "person")
@@ -52,14 +71,14 @@ struct RegistrationView: View {
                     .cornerRadius(10)
                 
                 CustomSecureTextField(text: $password, placeholder: Text("Password"))
-                     .padding()
-                     .padding(.vertical, -5)
-                     .background(Color(white: 1, opacity: 0.15))
-                     .cornerRadius(10)
+                    .padding()
+                    .padding(.vertical, -5)
+                    .background(Color(white: 1, opacity: 0.15))
+                    .cornerRadius(10)
             }
             .padding(.top)
             .padding(.horizontal, 25)
-                        
+            
             
             Button(action: {}) {
                 Text("Sign up")
