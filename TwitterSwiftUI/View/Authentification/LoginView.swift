@@ -27,7 +27,7 @@ struct LoginView: View {
                     .background(Color(white: 1, opacity: 0.15))
                     .cornerRadius(10)
                 
-                CustomTextField(text: $password, placeholder: Text("Password"), systemImageName: "lock")
+                CustomSecureTextField(text: $password, placeholder: Text("Password"))
                      .padding()
                      .padding(.vertical, -5)
                      .background(Color(white: 1, opacity: 0.15))
@@ -36,7 +36,42 @@ struct LoginView: View {
             .padding(.top, -20)
             .padding(.horizontal, 25)
             
+            HStack {
+                Spacer()
+                
+                Button(action: {}) {
+                    Text("Forgot Password?")
+                        .font(.footnote)
+                        .fontWeight(.semibold)
+                        .foregroundColor(.white)
+                }
+            }
+            .padding(.trailing, 28)
+            .padding(.top)
+            
+            Button(action: {}) {
+                Text("Sign in")
+                    .foregroundColor(.blue)
+                    .font(.headline)
+                    .fontWeight(.bold)
+                    .frame(width: 350, height: 50)
+                    .background(Color(.white))
+                    .clipShape(Capsule())
+            }
+            .padding()
+            
             Spacer()
+            
+            HStack {
+                Text("Don't have an account?")
+                    .font(.system(size: 14))
+                
+                Text("Sign up")
+                    .font(.system(size: 14, weight: .semibold))
+            }
+            .padding(.bottom)
+            .foregroundColor(.white)
+            
         }
         .background(Color(UIColor(red: 77 / 255, green: 158 / 255, blue: 236 / 255, alpha: 1)))
     }
