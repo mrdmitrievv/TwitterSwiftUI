@@ -9,6 +9,7 @@ import SwiftUI
 
 struct FeedView: View {
     
+    @EnvironmentObject var authViewModel: AuthViewModel
     @State var newTweetText = "..."
     @State var isNewTweetViewPresented = false
     
@@ -25,7 +26,10 @@ struct FeedView: View {
                 .padding(.horizontal, 14)
             }
             
-            Button(action: { isNewTweetViewPresented.toggle() }) {
+            Button(action: {
+                authViewModel.signOut()
+//                isNewTweetViewPresented.toggle()
+            }) {
                 Image("tweet")
                     .resizable()
                     .renderingMode(.template)

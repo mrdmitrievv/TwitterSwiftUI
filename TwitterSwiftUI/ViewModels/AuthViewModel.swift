@@ -7,12 +7,29 @@
 
 import SwiftUI
 import Firebase
+import FirebaseAuth
 import FirebaseStorage
 
 class AuthViewModel: ObservableObject {
     
-    func login() {
+    @Published var userSession: User?
+    @Published var isAuthentificating = false
+    @Published var error: Error?
+    @Published var user: User?
+    
+    init() {
+        userSession = Auth.auth().currentUser
+    }
         
+    func login(withEmail email: String, password: String) {
+        Auth.auth().signIn(withEmail: email, password: password) { _, error in
+            if let error = error {
+                print("DEBUG: Error with signIn: \(error.localizedDescription)")
+                return
+            }
+            
+            print("Successfully signed in")
+        }
     }
     
     func registerUser(email: String, fullname: String, username: String, password: String, userImage: UIImage) {
@@ -48,11 +65,16 @@ class AuthViewModel: ObservableObject {
                     
                     Firestore.firestore().collection("users").document(user.uid).setData(data) { _ in
                         print("DEBUG: SUCCESS")
-                    }                    
+                    }
                     
                 }
             }
             
         }
+    }
+    
+    func signOut() {
+        userSession = nil
+        try? Auth.auth().signOut()
     }
 }

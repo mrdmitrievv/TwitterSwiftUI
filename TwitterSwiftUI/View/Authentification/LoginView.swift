@@ -11,6 +11,7 @@ struct LoginView: View {
     
     @State var email = ""
     @State var password = ""
+    @ObservedObject var authViewModel = AuthViewModel()
     
     var body: some View {
         NavigationView {
@@ -50,7 +51,9 @@ struct LoginView: View {
                 .padding(.trailing, 28)
                 .padding(.top)
                 
-                Button(action: {}) {
+                Button(action: {
+                    authViewModel.login(withEmail: email, password: password)
+                }) {
                     Text("Sign in")
                         .foregroundColor(.blue)
                         .font(.headline)
