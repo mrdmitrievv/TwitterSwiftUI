@@ -16,6 +16,7 @@ struct RegistrationView: View {
     @State var isImagePickerPresented = false
     @State var choosenUIImage: UIImage?
     @State var image: Image?
+    @ObservedObject var authViewModel = AuthViewModel()
     @Environment(\.presentationMode) var mode: Binding<PresentationMode>
     
     private func convertUIImage() {
@@ -80,7 +81,10 @@ struct RegistrationView: View {
             .padding(.horizontal, 25)
             
             
-            Button(action: {}) {
+            Button(action: {
+                guard let image = choosenUIImage else { return }
+                authViewModel.registerUser(email: email, fullname: fullname, username: username, password: password, userImage: image)
+            }) {
                 Text("Sign up")
                     .foregroundColor(.blue)
                     .font(.headline)

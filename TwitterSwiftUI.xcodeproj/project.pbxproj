@@ -41,6 +41,7 @@
 		ABA910C6290A8FE90068548F /* FilterButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA910C5290A8FE90068548F /* FilterButtonView.swift */; };
 		ABA910C9290C32BC0068548F /* NewTweetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA910C8290C32BC0068548F /* NewTweetView.swift */; };
 		ABA910CD290C3BAD0068548F /* TextArea.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA910CC290C3BAD0068548F /* TextArea.swift */; };
+		ABCF8C9829191D0200AF4512 /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABCF8C9729191D0200AF4512 /* AuthViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -74,6 +75,7 @@
 		ABA910C5290A8FE90068548F /* FilterButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterButtonView.swift; sourceTree = "<group>"; };
 		ABA910C8290C32BC0068548F /* NewTweetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTweetView.swift; sourceTree = "<group>"; };
 		ABA910CC290C3BAD0068548F /* TextArea.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextArea.swift; sourceTree = "<group>"; };
+		ABCF8C9729191D0200AF4512 /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -157,6 +159,7 @@
 		AB863CE52901B19F00D39360 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				ABCF8C9729191D0200AF4512 /* AuthViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -322,6 +325,7 @@
 				AB94BCC32915AD8F0072529F /* RegistrationView.swift in Sources */,
 				ABA5126E29096DB700FCA832 /* ChatBubble.swift in Sources */,
 				AB863CEF290703EA00D39360 /* SearchBar.swift in Sources */,
+				ABCF8C9829191D0200AF4512 /* AuthViewModel.swift in Sources */,
 				ABA5127429099A6800FCA832 /* NewMessageView.swift in Sources */,
 				ABA5127029098C4A00FCA832 /* Message.swift in Sources */,
 				ABA910C4290A8FB60068548F /* ProfileActionButton.swift in Sources */,
