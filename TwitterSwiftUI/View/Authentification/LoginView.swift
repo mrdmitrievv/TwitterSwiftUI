@@ -11,7 +11,7 @@ struct LoginView: View {
     
     @State var email = ""
     @State var password = ""
-    @ObservedObject var authViewModel = AuthViewModel()
+    @EnvironmentObject var authViewModel: AuthViewModel
     
     var body: some View {
         NavigationView {
@@ -28,6 +28,7 @@ struct LoginView: View {
                         .padding(.vertical, -5)
                         .background(Color(white: 1, opacity: 0.15))
                         .cornerRadius(10)
+
                     
                     CustomSecureTextField(text: $password, placeholder: Text("Password"))
                          .padding()

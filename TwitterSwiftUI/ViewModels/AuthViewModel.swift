@@ -15,20 +15,20 @@ class AuthViewModel: ObservableObject {
     @Published var userSession: User?
     @Published var isAuthentificating = false
     @Published var error: Error?
-    @Published var user: User?
+//    @Published var user: User?
     
     init() {
         userSession = Auth.auth().currentUser
     }
         
     func login(withEmail email: String, password: String) {
-        Auth.auth().signIn(withEmail: email, password: password) { _, error in
+        Auth.auth().signIn(withEmail: email, password: password) { result, error in
             if let error = error {
                 print("DEBUG: Error with signIn: \(error.localizedDescription)")
                 return
             }
             
-            print("Successfully signed in")
+            self.userSession = result?.user
         }
     }
     
@@ -58,13 +58,13 @@ class AuthViewModel: ObservableObject {
                     let data = [
                         "email": email,
                         "fullname": fullname,
-                        "username": username,
+                        "username": username.lowercased(),
                         "userPhotoURL": imageUrl,
                         "uid": user.uid
                     ]
                     
                     Firestore.firestore().collection("users").document(user.uid).setData(data) { _ in
-                        print("DEBUG: SUCCESS")
+                        self.userSession = user
                     }
                     
                 }

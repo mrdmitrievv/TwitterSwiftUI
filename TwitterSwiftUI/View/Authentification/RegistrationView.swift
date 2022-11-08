@@ -16,7 +16,7 @@ struct RegistrationView: View {
     @State var isImagePickerPresented = false
     @State var choosenUIImage: UIImage?
     @State var image: Image?
-    @ObservedObject var authViewModel = AuthViewModel()
+    @EnvironmentObject var authViewModel: AuthViewModel
     @Environment(\.presentationMode) var mode: Binding<PresentationMode>
     
     private func convertUIImage() {
