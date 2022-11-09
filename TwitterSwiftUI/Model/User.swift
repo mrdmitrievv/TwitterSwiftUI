@@ -5,7 +5,7 @@
 //  Created by Артём Дмитриев on 08.11.2022.
 //
 
-import Foundation
+import Firebase
 
 struct User: Identifiable {
     let id: String
@@ -13,6 +13,8 @@ struct User: Identifiable {
     let fullname: String
     let username: String
     let userPhotoURL: String
+    
+    var isCurrentUser: Bool { return Auth.auth().currentUser?.uid == self.id }
     
     init(dictionary: [String: Any]) {
         self.id = dictionary["uid"] as? String ?? ""

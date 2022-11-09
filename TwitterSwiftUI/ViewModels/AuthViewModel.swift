@@ -87,7 +87,7 @@ class AuthViewModel: ObservableObject {
             guard let data = snapshot?.data() else { return }
             let user = User(dictionary: data)
             
-            print(user.email)
+            print("DEBUG: current user is" + user.username)
         }
     }
 }
