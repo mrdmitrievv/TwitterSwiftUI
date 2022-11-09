@@ -11,6 +11,7 @@ struct NewMessageView: View {
     @State var text = ""
     @Binding var isShown: Bool
     @Binding var isChatViewShown: Bool
+    @ObservedObject var searchViewModel = SearchViewModel()
     
     var body: some View {
         VStack {
@@ -20,12 +21,12 @@ struct NewMessageView: View {
             ScrollView {
                     VStack(alignment: .leading) {
                         
-                        ForEach(0..<20) { _ in
+                        ForEach(searchViewModel.users) { user in
                             Button(action: {
                                 isShown.toggle()
                                 isChatViewShown.toggle()
                             }) {
-                                UserCell()
+                                UserCell(user: user)
                                 HStack {
                                     Spacer()
                                 }
