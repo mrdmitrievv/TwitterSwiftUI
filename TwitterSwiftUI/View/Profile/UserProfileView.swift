@@ -9,22 +9,24 @@ import SwiftUI
 
 struct UserProfileView: View {
     
-    @State var selectedFilter: TweetFilterOptions = .tweets
-    
     let user: User
+    @State var selectedFilter: TweetFilterOptions = .tweets
+    @ObservedObject var profileViewModel: ProfileViewModel
+        
+    init(user: User) {
+        self.user = user
+        self.profileViewModel = ProfileViewModel(user: user)
+    }
     
     var body: some View {
         ScrollView {
             VStack {
-                ProfileHeaderView(user: user)
+                ProfileHeaderView(profileViewModel: profileViewModel, isFollowed: $profileViewModel.isFollowed)
             }
             
             FilterButtonView(selectedOption: $selectedFilter)
-            
-            .navigationTitle("batman")
+                .navigationTitle(profileViewModel.user.username)
         }
-        
-        
     }
 }
 

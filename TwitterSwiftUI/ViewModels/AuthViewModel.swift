@@ -82,12 +82,12 @@ class AuthViewModel: ObservableObject {
     
     func fetchUser() {
         guard let uid = userSession?.uid else { return }
-        
+
         COLLECTION_USERS.document(uid).getDocument { snapshot, _ in
             guard let data = snapshot?.data() else { return }
             let user = User(dictionary: data)
-            
-            print("DEBUG: current user is" + user.username)
+
+            print("DEBUG: current user is " + user.username)
         }
     }
 }
