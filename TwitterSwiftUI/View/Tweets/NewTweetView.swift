@@ -11,8 +11,13 @@ import Kingfisher
 struct NewTweetView: View {
     
     @State var text: String = ""
-    @ObservedObject var uploadTweetViewModel = UploadTweetViewModel()
+    @ObservedObject var uploadTweetViewModel: UploadTweetViewModel
     @Binding var isNewTweetViewShown: Bool
+    
+    init(isPresented: Binding<Bool>) {
+        self._isNewTweetViewShown = isPresented
+        self.uploadTweetViewModel = UploadTweetViewModel(isPresented: isPresented)
+    }
     
     var body: some View {
         NavigationView {
