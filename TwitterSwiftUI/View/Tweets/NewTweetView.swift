@@ -45,7 +45,10 @@ struct NewTweetView: View {
                                 .fontWeight(.bold)
                         }),
                     trailing:
-                        Button(action: { uploadTweetViewModel.uploadTweet(caption: text) }, label: {
+                        Button(action: {
+                            uploadTweetViewModel.uploadTweet(caption: text)
+                            FeedViewModel.shared.fetchTweets()
+                        }, label: {
                             Text("Tweet")
                                 .padding(.horizontal)
                                 .padding(.vertical, 8)

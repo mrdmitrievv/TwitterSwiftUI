@@ -8,22 +8,21 @@
 import SwiftUI
 
 struct FeedView: View {
-    
-    @EnvironmentObject var authViewModel: AuthViewModel
+        
     @State var newTweetText = "..."
     @State var isNewTweetViewPresented = false
+    @ObservedObject var feedViewModel = FeedViewModel.shared
     
     var body: some View {
         
         ZStack(alignment: .bottomTrailing) {
             ScrollView {
-                VStack(spacing: 20) {
-                    ForEach(0..<30) { _ in
-                        TweetCell()
+                LazyVStack(spacing: 20) {
+                    ForEach(feedViewModel.tweets) { tweet in
+                        TweetCell(tweet: tweet)
                     }
                 }
-                .padding(.vertical)
-                .padding(.horizontal, 14)
+                .padding(.top)
             }
             
             Button(action: { isNewTweetViewPresented.toggle() }) {

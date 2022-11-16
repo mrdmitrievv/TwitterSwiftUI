@@ -24,6 +24,7 @@ class UploadTweetViewModel: ObservableObject {
                                    "username": user.username,
                                    "uid": user.id,
                                    "caption": caption,
+                                   "userPhotoUrl": user.userPhotoURL,
                                    "likes": 0,
                                    "tweetId": docRef.documentID,
                                    "timestamp": Timestamp(date: Date())
