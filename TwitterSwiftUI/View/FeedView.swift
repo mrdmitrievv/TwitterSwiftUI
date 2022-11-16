@@ -26,10 +26,7 @@ struct FeedView: View {
                 .padding(.horizontal, 14)
             }
             
-            Button(action: {
-                authViewModel.signOut()
-//                isNewTweetViewPresented.toggle()
-            }) {
+            Button(action: { isNewTweetViewPresented.toggle() }) {
                 Image("tweet")
                     .resizable()
                     .renderingMode(.template)

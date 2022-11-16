@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Kingfisher
 
 struct ContentView: View {
     
@@ -42,6 +43,16 @@ struct ContentView: View {
                             }
                     }
                     .navigationTitle("Home")
+                    .navigationBarItems(leading: Button(action: { authViewModel.signOut() }, label: {
+                        if let user = authViewModel.user {
+                            KFImage(URL(string: user.userPhotoURL))
+                                .resizable()
+                                .scaledToFill()
+                                .frame(width: 32, height: 32)
+                                .clipShape(Circle())
+                                .clipped()
+                        }
+                    }))
                     .navigationBarTitleDisplayMode(.inline)
                     .toolbarBackground(Color(uiColor: uiColor), for: .navigationBar)
                     .toolbarBackground(.visible, for: .navigationBar)
