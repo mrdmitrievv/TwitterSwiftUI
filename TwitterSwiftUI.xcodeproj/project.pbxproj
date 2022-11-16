@@ -34,6 +34,7 @@
 		AB94BCCE29170E6A0072529F /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = AB94BCCD29170E6A0072529F /* FirebaseFirestore */; };
 		AB94BCD029170E6A0072529F /* FirebaseFunctions in Frameworks */ = {isa = PBXBuildFile; productRef = AB94BCCF29170E6A0072529F /* FirebaseFunctions */; };
 		AB94BCD229170E6A0072529F /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = AB94BCD129170E6A0072529F /* FirebaseStorage */; };
+		ABA0A1552924FDA700F753D9 /* UploadTweetViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA0A1542924FDA700F753D9 /* UploadTweetViewModel.swift */; };
 		ABA5126A2908767900FCA832 /* MessageInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA512692908767900FCA832 /* MessageInputView.swift */; };
 		ABA5126C2908768100FCA832 /* ChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA5126B2908768100FCA832 /* ChatView.swift */; };
 		ABA5126E29096DB700FCA832 /* ChatBubble.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA5126D29096DB700FCA832 /* ChatBubble.swift */; };
@@ -72,6 +73,7 @@
 		AB94BCC22915AD8F0072529F /* RegistrationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationView.swift; sourceTree = "<group>"; };
 		AB94BCC42915B8380072529F /* ImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePicker.swift; sourceTree = "<group>"; };
 		AB94BCC629170BEE0072529F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		ABA0A1542924FDA700F753D9 /* UploadTweetViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadTweetViewModel.swift; sourceTree = "<group>"; };
 		ABA512692908767900FCA832 /* MessageInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageInputView.swift; sourceTree = "<group>"; };
 		ABA5126B2908768100FCA832 /* ChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatView.swift; sourceTree = "<group>"; };
 		ABA5126D29096DB700FCA832 /* ChatBubble.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatBubble.swift; sourceTree = "<group>"; };
@@ -172,6 +174,7 @@
 				ABCF8C9729191D0200AF4512 /* AuthViewModel.swift */,
 				AB80477D291BFF350052E02F /* SearchViewModel.swift */,
 				AB80477F291E6C1F0052E02F /* ProfileViewModel.swift */,
+				ABA0A1542924FDA700F753D9 /* UploadTweetViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -339,6 +342,7 @@
 				AB804780291E6C1F0052E02F /* ProfileViewModel.swift in Sources */,
 				AB7F986A29156A4200CEF734 /* LoginView.swift in Sources */,
 				ABA910C9290C32BC0068548F /* NewTweetView.swift in Sources */,
+				ABA0A1552924FDA700F753D9 /* UploadTweetViewModel.swift in Sources */,
 				ABA910C6290A8FE90068548F /* FilterButtonView.swift in Sources */,
 				AB863CEB2902B78200D39360 /* TweetCell.swift in Sources */,
 				AB94BCC32915AD8F0072529F /* RegistrationView.swift in Sources */,

@@ -11,7 +11,7 @@ import Kingfisher
 struct NewTweetView: View {
     
     @State var text: String = ""
-    
+    @ObservedObject var uploadTweetViewModel = UploadTweetViewModel()
     @Binding var isNewTweetViewShown: Bool
     
     var body: some View {
@@ -40,7 +40,7 @@ struct NewTweetView: View {
                                 .fontWeight(.bold)
                         }),
                     trailing:
-                        Button(action: {}, label: {
+                        Button(action: { uploadTweetViewModel.uploadTweet(caption: text) }, label: {
                             Text("Tweet")
                                 .padding(.horizontal)
                                 .padding(.vertical, 8)
@@ -51,11 +51,5 @@ struct NewTweetView: View {
                 )
             }
         }
-    }
-}
-
-struct NewTweetView_Previews: PreviewProvider {
-    static var previews: some View {
-        NewTweetView(isNewTweetViewShown: .constant(true))
     }
 }
