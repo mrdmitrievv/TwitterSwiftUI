@@ -66,7 +66,7 @@ struct TweetDetailsView: View {
             
             Divider()
             
-            TweetActionsView()
+            TweetActionsView(tweet: tweet)
                 .padding(.horizontal, 30)
             
             Spacer()
