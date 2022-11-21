@@ -37,6 +37,8 @@
 		ABA0A1552924FDA700F753D9 /* UploadTweetViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA0A1542924FDA700F753D9 /* UploadTweetViewModel.swift */; };
 		ABA0A15729250E2700F753D9 /* Tweet.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA0A15629250E2700F753D9 /* Tweet.swift */; };
 		ABA0A1592925102000F753D9 /* FeedViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA0A1582925102000F753D9 /* FeedViewModel.swift */; };
+		ABA0A15B292BBA5200F753D9 /* TweetDetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA0A15A292BBA5200F753D9 /* TweetDetailsView.swift */; };
+		ABA0A15D292BC13C00F753D9 /* TweetActionsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA0A15C292BC13C00F753D9 /* TweetActionsView.swift */; };
 		ABA5126A2908767900FCA832 /* MessageInputView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA512692908767900FCA832 /* MessageInputView.swift */; };
 		ABA5126C2908768100FCA832 /* ChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA5126B2908768100FCA832 /* ChatView.swift */; };
 		ABA5126E29096DB700FCA832 /* ChatBubble.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA5126D29096DB700FCA832 /* ChatBubble.swift */; };
@@ -78,6 +80,8 @@
 		ABA0A1542924FDA700F753D9 /* UploadTweetViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadTweetViewModel.swift; sourceTree = "<group>"; };
 		ABA0A15629250E2700F753D9 /* Tweet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tweet.swift; sourceTree = "<group>"; };
 		ABA0A1582925102000F753D9 /* FeedViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewModel.swift; sourceTree = "<group>"; };
+		ABA0A15A292BBA5200F753D9 /* TweetDetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweetDetailsView.swift; sourceTree = "<group>"; };
+		ABA0A15C292BC13C00F753D9 /* TweetActionsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweetActionsView.swift; sourceTree = "<group>"; };
 		ABA512692908767900FCA832 /* MessageInputView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessageInputView.swift; sourceTree = "<group>"; };
 		ABA5126B2908768100FCA832 /* ChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatView.swift; sourceTree = "<group>"; };
 		ABA5126D29096DB700FCA832 /* ChatBubble.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatBubble.swift; sourceTree = "<group>"; };
@@ -226,6 +230,8 @@
 			isa = PBXGroup;
 			children = (
 				ABA910C8290C32BC0068548F /* NewTweetView.swift */,
+				ABA0A15A292BBA5200F753D9 /* TweetDetailsView.swift */,
+				ABA0A15C292BC13C00F753D9 /* TweetActionsView.swift */,
 			);
 			path = Tweets;
 			sourceTree = "<group>";
@@ -343,6 +349,7 @@
 				AB7F986C29156A4F00CEF734 /* CustomTextField.swift in Sources */,
 				AB863CE92901BDFB00D39360 /* FeedView.swift in Sources */,
 				ABA910C2290A8FA70068548F /* ProfileHeaderView.swift in Sources */,
+				ABA0A15D292BC13C00F753D9 /* TweetActionsView.swift in Sources */,
 				ABA5126C2908768100FCA832 /* ChatView.swift in Sources */,
 				AB2580B52901490C00C2B80B /* TwitterSwiftUIApp.swift in Sources */,
 				AB804780291E6C1F0052E02F /* ProfileViewModel.swift in Sources */,
@@ -356,6 +363,7 @@
 				ABA5126E29096DB700FCA832 /* ChatBubble.swift in Sources */,
 				AB863CEF290703EA00D39360 /* SearchBar.swift in Sources */,
 				ABA0A15729250E2700F753D9 /* Tweet.swift in Sources */,
+				ABA0A15B292BBA5200F753D9 /* TweetDetailsView.swift in Sources */,
 				ABCF8C9829191D0200AF4512 /* AuthViewModel.swift in Sources */,
 				ABA5127429099A6800FCA832 /* NewMessageView.swift in Sources */,
 				ABA5127029098C4A00FCA832 /* Message.swift in Sources */,
