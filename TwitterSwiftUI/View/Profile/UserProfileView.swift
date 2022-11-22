@@ -27,21 +27,12 @@ struct UserProfileView: View {
             FilterButtonView(selectedOption: $selectedFilter)
                 .navigationTitle(profileViewModel.user.username)
             
-            LazyVStack {
-                if selectedFilter == .tweets {
-                    ForEach(profileViewModel.userTweets) { tweet in
-                        TweetCell(tweet: tweet)
-                    }
-                } else if selectedFilter == .likes {
-                    ForEach(profileViewModel.userLikedTweets) { tweet in
-                        TweetCell(tweet: tweet)
-                    }
-                } else {
-                    Text("No replies")
-                        .padding()
-                }
-            }
             
+            LazyVStack {
+                ForEach(profileViewModel.chooseTweets(selectedFilter)) { tweet in
+                    TweetCell(tweet: tweet)
+                }
+            }            
         }
     }
 }
