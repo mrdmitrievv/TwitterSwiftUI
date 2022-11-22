@@ -61,6 +61,8 @@ class ProfileViewModel: ObservableObject {
         COLLECTION_TWEETS.whereField("uid", isEqualTo: user.id).getDocuments { snapshot, _ in
             guard let documents = snapshot?.documents else { return }
             self.userTweets = documents.map({ Tweet(dictionary: $0.data()) })
+            
+            print("DEBUG: tweets were loaded - \(self.userTweets)")
         }
     }
     

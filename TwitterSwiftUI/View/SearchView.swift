@@ -19,7 +19,7 @@ struct SearchView: View {
             ScrollView {                                       
                     VStack(alignment: .leading) {
                         ForEach(searchViewModel.users) { user in
-                            NavigationLink(destination: UserProfileView(user: user)) {
+                            NavigationLink(destination: LazyView(UserProfileView(user: user))) {
                                 HStack {
                                     UserCell(user: user)
                                     Spacer()
