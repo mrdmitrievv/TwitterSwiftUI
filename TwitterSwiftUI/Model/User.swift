@@ -13,6 +13,9 @@ struct User: Identifiable {
     let fullname: String
     let username: String
     let userPhotoURL: String
+    var stats: UserStats
+    var isFollowed: Bool
+    
     
     var isCurrentUser: Bool { return Auth.auth().currentUser?.uid == self.id }
     
@@ -22,5 +25,12 @@ struct User: Identifiable {
         self.fullname = dictionary["fullname"] as? String ?? ""
         self.username = dictionary["username"] as? String ?? ""
         self.userPhotoURL = dictionary["userPhotoURL"] as? String ?? ""
+        self.stats = UserStats(followers: 0, following: 0)
+        self.isFollowed = false
     }
+}
+
+struct UserStats {
+    let followers: Int
+    let following: Int
 }

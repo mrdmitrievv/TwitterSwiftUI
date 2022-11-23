@@ -21,7 +21,7 @@ struct UserProfileView: View {
     var body: some View {
         ScrollView {
             VStack {
-                ProfileHeaderView(profileViewModel: profileViewModel, isFollowed: $profileViewModel.isFollowed)
+                ProfileHeaderView(profileViewModel: profileViewModel)
             }
             
             FilterButtonView(selectedOption: $selectedFilter)

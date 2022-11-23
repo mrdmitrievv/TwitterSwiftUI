@@ -10,8 +10,7 @@ import Kingfisher
 
 struct ProfileHeaderView: View {
     
-    let profileViewModel: ProfileViewModel
-    @Binding var isFollowed: Bool
+    @ObservedObject var profileViewModel: ProfileViewModel
     
     var body: some View {
         VStack {
@@ -38,7 +37,7 @@ struct ProfileHeaderView: View {
             
             HStack(spacing: 30) {
                 VStack {
-                    Text("1")
+                    Text("\(profileViewModel.user.stats.followers)")
                         .font(.system(size: 16, weight: .semibold))
                     Text("Followers")
                         .font(.footnote)
@@ -46,7 +45,7 @@ struct ProfileHeaderView: View {
                 }
                 
                 VStack {
-                    Text("1")
+                    Text("\(profileViewModel.user.stats.following)")
                         .font(.system(size: 16, weight: .bold))
                     Text("Following")
                         .font(.footnote)
@@ -55,7 +54,7 @@ struct ProfileHeaderView: View {
             }
             .padding(.top, 7)
             
-            ProfileActionButton(profileViewModel: profileViewModel, isFollowed: $isFollowed)
+            ProfileActionButton(profileViewModel: profileViewModel)
                 .padding()
         }
         .padding()
