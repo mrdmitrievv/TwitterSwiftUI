@@ -18,7 +18,7 @@ struct SearchView: View {
                 .padding(.horizontal, 5)
             ScrollView {                                       
                     VStack(alignment: .leading) {
-                        ForEach(searchViewModel.users) { user in
+                        ForEach( text.isEmpty ? searchViewModel.users : searchViewModel.filterUsers(text) ) { user in
                             NavigationLink(destination: LazyView(UserProfileView(user: user))) {
                                 HStack {
                                     UserCell(user: user)
