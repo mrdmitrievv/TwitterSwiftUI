@@ -35,12 +35,14 @@ struct ProfileActionButton: View {
                 .cornerRadius(20)
                 .shadow(color: .gray, radius: 10)
                 
-                Button(action: {}) {
+                NavigationLink(destination: {
+                    LazyView(ChatView())
+                }, label: {
                     Text("Message")
                         .frame(width: 160, height: 40)
                         .background(Color.purple)
                         .foregroundColor(.white)
-                }
+                })
                 .cornerRadius(20)
                 .shadow(color: .gray, radius: 10)
             }
