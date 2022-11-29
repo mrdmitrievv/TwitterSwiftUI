@@ -36,7 +36,7 @@ struct ProfileActionButton: View {
                 .shadow(color: .gray, radius: 10)
                 
                 NavigationLink(destination: {
-                    LazyView(ChatView())
+                    LazyView(ChatView(user: profileViewModel.user))
                 }, label: {
                     Text("Message")
                         .frame(width: 160, height: 40)

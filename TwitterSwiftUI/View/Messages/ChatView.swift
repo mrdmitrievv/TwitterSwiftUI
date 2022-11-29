@@ -8,8 +8,15 @@
 import SwiftUI
 
 struct ChatView: View {
-    
+        
     @State var textMessage = ""
+    let user: User
+    let chatViewModel: ChatViewModel
+    
+    init(user: User) {
+        self.user = user
+        self.chatViewModel = ChatViewModel(user)
+    }
     
     var body: some View {
         VStack {
@@ -24,13 +31,13 @@ struct ChatView: View {
             
             Divider()
             
-            MessageInputView(textMessage: $textMessage)
+            MessageInputView(textMessage: $textMessage, action: sendMessage)
         }
+    }
+    
+    private func sendMessage() {
+        chatViewModel.sendMessage(textMessage)
     }
 }
 
-struct ChatView_Previews: PreviewProvider {
-    static var previews: some View {
-        ChatView()
-    }
-}
+
