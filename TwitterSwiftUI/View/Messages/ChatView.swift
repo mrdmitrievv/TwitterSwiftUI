@@ -32,7 +32,7 @@ struct ChatView: View {
             Divider()
             
             MessageInputView(textMessage: $textMessage, action: sendMessage)
-        }
+        }.navigationTitle(user.username)
     }
     
     private func sendMessage() {
