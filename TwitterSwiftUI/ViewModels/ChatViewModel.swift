@@ -9,7 +9,7 @@ import SwiftUI
 import Firebase
 
 
-class ChatViewModel: ObservableObject {
+struct ChatViewModel {
     
     let user: User
     
