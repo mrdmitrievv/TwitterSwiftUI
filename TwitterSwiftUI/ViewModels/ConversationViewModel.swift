@@ -10,6 +10,7 @@ import Firebase
 
 class ConversationViewModel: ObservableObject {
     @Published var recentMessages = [Message]()
+    private var recentMessagesDictionary = [String: Message]()
     
     init() {
         fetchMessages()
@@ -31,8 +32,9 @@ class ConversationViewModel: ObservableObject {
                 COLLECTION_USERS.document(uid).getDocument { snapshot, _ in
                     guard let data = snapshot?.data() else { return }
                     let user = User(dictionary: data)
+                    self.recentMessagesDictionary[uid] = Message(user: user, dictionary: messageData)
                     
-                    self.recentMessages.append(Message(user: user, dictionary: messageData))
+                    self.recentMessages = Array(self.recentMessagesDictionary.values)
                 }
             }
         }
