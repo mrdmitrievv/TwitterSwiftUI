@@ -11,7 +11,8 @@ struct NewMessageView: View {
     @State var text = ""
     @Binding var isShown: Bool
     @Binding var isChatViewShown: Bool
-    @ObservedObject var searchViewModel = SearchViewModel()
+    @Binding var user: User?
+    @ObservedObject var searchViewModel = SearchViewModel(withConfig: .newMessage)
     
     var body: some View {
         VStack {
@@ -21,10 +22,11 @@ struct NewMessageView: View {
             ScrollView {
                     VStack(alignment: .leading) {
                         
-                        ForEach(searchViewModel.users) { user in
+                        ForEach( text.isEmpty ? searchViewModel.users : searchViewModel.filterUsers(text) ) { user in
                             Button(action: {
                                 isShown.toggle()
                                 isChatViewShown.toggle()
+                                self.user = user
                             }) {
                                 UserCell(user: user)
                                 HStack {
@@ -42,8 +44,4 @@ struct NewMessageView: View {
     }
 }
 
-struct NewMessageView_Previews: PreviewProvider {
-    static var previews: some View {
-        NewMessageView(isShown: .constant(false), isChatViewShown: .constant(false))
-    }
-}
+
