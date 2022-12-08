@@ -36,6 +36,7 @@ class ChatViewModel: ObservableObject {
                     guard let data = snapshot?.data() else { return }
                     let user = User(dictionary: data)
                     self.messages.append(Message(user: user, dictionary: messageData))
+                    self.messages.sort(by: { $0.timestamp.dateValue() < $1.timestamp.dateValue() })
                 }
             }
         }

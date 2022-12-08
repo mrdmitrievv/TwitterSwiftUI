@@ -36,7 +36,9 @@ struct ChatView: View {
     }
     
     private func sendMessage() {
+        guard textMessage != "" else { return }
         chatViewModel.sendMessage(textMessage)
+        textMessage = ""
     }
 }
 
