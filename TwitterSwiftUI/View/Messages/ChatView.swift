@@ -11,7 +11,7 @@ struct ChatView: View {
         
     @State var textMessage = ""
     let user: User
-    let chatViewModel: ChatViewModel
+    @ObservedObject var chatViewModel: ChatViewModel
     
     init(user: User) {
         self.user = user
@@ -19,10 +19,10 @@ struct ChatView: View {
     }
     
     var body: some View {
-        VStack {
+        VStack(alignment: .leading) {
             ScrollView {
                 VStack(alignment: .leading, spacing: 12) {
-                    ForEach(MOCK_MESSAGES) { message in
+                    ForEach(chatViewModel.messages) { message in
                         MessageView(message: message)
                     }
                     .padding(.horizontal)
