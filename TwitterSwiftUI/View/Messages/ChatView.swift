@@ -25,7 +25,6 @@ struct ChatView: View {
                     ForEach(chatViewModel.messages) { message in
                         MessageView(message: message)
                     }
-                    .padding(.horizontal)
                 }
             }.padding(.vertical)
             

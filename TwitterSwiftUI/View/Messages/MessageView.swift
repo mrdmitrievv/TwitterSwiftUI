@@ -13,22 +13,35 @@ struct MessageView: View {
     
     var body: some View {
         
-        HStack(alignment: .bottom) {
-                    if !message.isFromCurrentUser {
-                        KFImage(URL(string: message.user.userPhotoURL))
-                            .resizable()
-                            .scaledToFill()
-                            .frame(width: 40, height: 40)
-                            .clipShape(Circle())
-                    } else {
-                        Spacer ()
-                    }
-                                                            
-            Text(message.text)
+        HStack {
+            if message.isFromCurrentUser {
+                Spacer()
+                Text(message.text)
+                    .padding()
+                    .background(Color.blue)
+                    .clipShape(ChatBubble(isFromCurrentUser: true))
+                    .foregroundColor(.white)
+                    .padding(.leading, 100)
+                    .padding(.trailing, 16)
+            } else {
+                HStack(alignment: .bottom) {
+                    KFImage(URL(string: message.user.userPhotoURL))
+                        .resizable()
+                        .scaledToFill()
+                        .frame(width: 40, height: 40)
+                        .clipShape(Circle())
+                    
+                    Text(message.text)
                         .padding()
-                        .background(message.isFromCurrentUser ? Color(.systemBlue) : Color(.systemGray5))
-                        .foregroundColor(message.isFromCurrentUser ? .white : .black)
-                        .clipShape(ChatBubble(isFromCurrentUser: message.isFromCurrentUser))
+                        .background(Color(.systemGray5))
+                        .clipShape(ChatBubble(isFromCurrentUser: false))
+                        .foregroundColor(.black)
+                    
                 }
+                .padding(.trailing, 100)
+                .padding(.leading, 16)
+                Spacer()
+            }
+        }
     }
 }
