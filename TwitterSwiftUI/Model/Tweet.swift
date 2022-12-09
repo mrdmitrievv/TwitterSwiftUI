@@ -28,15 +28,20 @@ struct Tweet: Identifiable {
         self.likes = dictionary["likes"] as? Int ?? 0
         self.uid = dictionary["uid"] as? String ?? "" 
     }
+    
+    var timestampString: String {
+        let formatter = DateComponentsFormatter()
+        formatter.allowedUnits = [.second, .minute, .hour, .day, .weekOfMonth]
+        formatter.maximumUnitCount = 1
+        formatter.unitsStyle = .abbreviated    
+        return formatter.string(from: timestamp.dateValue(), to: Date()) ?? ""
+    }
+    
+    var detailedTimestampString: String {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "h:mm a · MM/dd/yyyy"
+        return formatter.string(from: timestamp.dateValue())
+    }
 }
 
-let myDictionary: [String: Any] = [
-    "id": "1",
-    "fullname": "Tim Cook",
-    "username": "timcook",
-    "userPhotoUrl": "https://firebasestorage.googleapis.com:443/v0/b/twitterswiftui-ac25f.appspot.com/o/1779864E-951C-4518-B969-0B6013CF6169?alt=media&token=a10beca5-ca35-4c6c-b366-eea8b601ec6e",
-    "caption": "test tweet",
-    "timestamp": Timestamp(date: Date()),
-    "likes": 0,
-    "uid": "2"
-]
+

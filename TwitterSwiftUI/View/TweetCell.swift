@@ -31,7 +31,7 @@ struct TweetCell: View {
                             .foregroundColor(.black)
                         Text("@\(tweet.username) •")
                             .foregroundColor(.gray)
-                        Text("27w")
+                        Text(tweet.timestampString)
                             .foregroundColor(.gray)
                     }
                     
@@ -45,11 +45,5 @@ struct TweetCell: View {
             Divider()
         }
         .padding(.horizontal)
-    }
-}
-
-struct TweetCell_Previews: PreviewProvider {
-    static var previews: some View {
-        TweetCell(tweet: Tweet(dictionary: myDictionary))
     }
 }
