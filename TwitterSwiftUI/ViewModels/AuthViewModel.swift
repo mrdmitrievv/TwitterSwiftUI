@@ -93,4 +93,13 @@ class AuthViewModel: ObservableObject {
             self.user = User(dictionary: data)
         }
     }
+    
+    func showTabTitle(for index: Int) -> String {
+        switch index {
+        case 0: return "Home"
+        case 1: return "Search"
+        case 2: return "Messages"
+        default: return ""
+        }
+    }
 }
