@@ -16,6 +16,7 @@ enum SearchViewModelConfiguration {
 class SearchViewModel: ObservableObject {
     @Published var users = [User]()
     private let config: SearchViewModelConfiguration
+    private let globalQueue = DispatchQueue.global()
     
     init(withConfig config: SearchViewModelConfiguration) {
         self.config = config
@@ -24,16 +25,17 @@ class SearchViewModel: ObservableObject {
     
     private func fetchUsers(config: SearchViewModelConfiguration) {
         
-        
-        COLLECTION_USERS.getDocuments { snapshot, _ in
-            guard let documents = snapshot?.documents else { return }
-            let users = documents.map({ User(dictionary: $0.data()) })
-            
-            switch config {
-            case .search: self.users = users
-            case .newMessage: self.users = users.filter({ !$0.isCurrentUser })
-            }            
-        }
+        globalQueue.async {
+            COLLECTION_USERS.getDocuments { snapshot, _ in
+                guard let documents = snapshot?.documents else { return }
+                let users = documents.map({ User(dictionary: $0.data()) })
+                
+                switch config {
+                case .search: self.users = users
+                case .newMessage: self.users = users.filter({ !$0.isCurrentUser })
+                }
+            }
+        }        
     }
     
     func filterUsers(_ query: String) -> [User] {
