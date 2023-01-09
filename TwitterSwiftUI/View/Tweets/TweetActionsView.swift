@@ -13,8 +13,8 @@ struct TweetActionsView: View {
     @ObservedObject var viewModel: TweetActionsViewModel
     
     init(tweet: Tweet) {
-        self.tweet = tweet
-        self.viewModel = TweetActionsViewModel(tweet: tweet)        
+        self.tweet = tweet    
+        self.viewModel = TweetActionsViewModel(tweet: tweet)
     }
     
     var body: some View {

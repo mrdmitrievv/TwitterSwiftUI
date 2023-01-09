@@ -12,10 +12,12 @@ class TweetActionsViewModel: ObservableObject {
     
     let tweet: Tweet
     @Published var isLiked = false
+    @Published var tweetLikes = 0
     private let globalQueue = DispatchQueue.global()
     
     init(tweet: Tweet) {
         self.tweet = tweet
+        checkTweetLikes()
         checkIfTweetIsLiked()
     }
     
@@ -29,7 +31,7 @@ class TweetActionsViewModel: ObservableObject {
             COLLECTION_TWEETS.document(self.tweet.id).updateData(["likes": self.tweet.likes + 1]) { _ in
                 tweetsLikesRef.document(uid).setData([:]) { _ in
                     userLikesRef.document(self.tweet.id).setData([:]) { _ in
-                        self.isLiked = true
+                        self.isLiked = true                        
                     }
                 }
             }
@@ -62,6 +64,15 @@ class TweetActionsViewModel: ObservableObject {
             userLikesRef.document(self.tweet.id).getDocument { snapshot, _ in
                 guard let isLiked = snapshot?.exists else { return }
                 self.isLiked = isLiked
+            }
+        }
+    }
+    
+    func checkTweetLikes() {
+        globalQueue.async {
+            COLLECTION_TWEETS.document(self.tweet.id).collection("tweet-likes").getDocuments { snapshot, _ in
+                guard let likes = snapshot?.count else { return }
+                self.tweetLikes = likes
             }
         }
     }

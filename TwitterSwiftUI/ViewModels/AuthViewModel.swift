@@ -84,9 +84,9 @@ class AuthViewModel: ObservableObject {
     }
     
     func signOut() {
-        globalQueue.async {
-            self.userSession = nil
-            self.user = nil
+        self.userSession = nil
+        self.user = nil
+        globalQueue.async {           
             try? Auth.auth().signOut()
         }
     }

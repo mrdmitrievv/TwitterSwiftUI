@@ -9,7 +9,12 @@ import SwiftUI
 import Kingfisher
 
 struct TweetDetailsView: View {
+    
     let tweet: Tweet
+    
+    init(tweet: Tweet) {
+        self.tweet = tweet
+    }
     
     var body: some View {
         
