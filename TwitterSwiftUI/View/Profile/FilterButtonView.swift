@@ -23,6 +23,7 @@ enum TweetFilterOptions: Int, CaseIterable {
 struct FilterButtonView: View {
     
     @Binding var selectedOption: TweetFilterOptions
+    @State private var offset: CGFloat = 200.0
     
     private let underlineWidth = UIScreen.main.bounds.width / CGFloat(TweetFilterOptions.allCases.count)
     
@@ -50,7 +51,7 @@ struct FilterButtonView: View {
                 .foregroundColor(.blue)
                 .frame(width: underlineWidth - 20, height: 3, alignment: .center)
                 .padding(.leading, customPadding)
-                .animation(.spring())
+                .animation(Animation.spring(), value: selectedOption)
         }
     }
 }

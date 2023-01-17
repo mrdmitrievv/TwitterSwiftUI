@@ -15,7 +15,7 @@ struct ConversationView: View {
     
     var body: some View {
         ZStack(alignment: .bottomTrailing) {
-                                                     
+                                                                             
             if let user = user {
                 NavigationLink(
                     destination: LazyView(ChatView(user: user)),
