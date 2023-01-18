@@ -11,7 +11,7 @@ struct FeedView: View {
         
     @State var newTweetText = "..."
     @State var isNewTweetViewPresented = false
-    @ObservedObject var feedViewModel = FeedViewModel.shared    
+    @ObservedObject var feedViewModel = FeedViewModel()
     
     var body: some View {
         
