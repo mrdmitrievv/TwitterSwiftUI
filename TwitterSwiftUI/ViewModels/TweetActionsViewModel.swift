@@ -31,7 +31,8 @@ class TweetActionsViewModel: ObservableObject {
             COLLECTION_TWEETS.document(self.tweet.id).updateData(["likes": self.tweet.likes + 1]) { _ in
                 tweetsLikesRef.document(uid).setData([:]) { _ in
                     userLikesRef.document(self.tweet.id).setData([:]) { _ in
-                        self.isLiked = true                        
+                        self.isLiked = true
+                        self.checkTweetLikes()
                     }
                 }
             }
@@ -49,6 +50,7 @@ class TweetActionsViewModel: ObservableObject {
                 tweetsLikesRef.document(uid).delete { _ in
                     userLikesRef.document(self.tweet.id).delete { _ in
                         self.isLiked = false
+                        self.checkTweetLikes()
                     }
                 }
             }

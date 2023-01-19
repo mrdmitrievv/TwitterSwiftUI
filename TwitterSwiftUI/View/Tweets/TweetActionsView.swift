@@ -9,13 +9,13 @@ import SwiftUI
 
 struct TweetActionsView: View {
     
-    let tweet: Tweet
+//    let tweet: Tweet
     @ObservedObject var viewModel: TweetActionsViewModel
     
-    init(tweet: Tweet) {
-        self.tweet = tweet    
-        self.viewModel = TweetActionsViewModel(tweet: tweet)
-    }
+//    init(viewModel: TweetActionsViewModel) {
+//        self.tweet = tweet
+//        self.viewModel = TweetActionsViewModel(tweet: tweet)
+//    }
     
     var body: some View {
         HStack {

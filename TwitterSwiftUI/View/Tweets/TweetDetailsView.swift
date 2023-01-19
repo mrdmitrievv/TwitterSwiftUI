@@ -11,9 +11,11 @@ import Kingfisher
 struct TweetDetailsView: View {
     
     let tweet: Tweet
+    @ObservedObject var tweetActionViewModel: TweetActionsViewModel
     
     init(tweet: Tweet) {
         self.tweet = tweet
+        self.tweetActionViewModel = TweetActionsViewModel(tweet: tweet)
     }
     
     var body: some View {
@@ -60,7 +62,7 @@ struct TweetDetailsView: View {
                 }
                 
                 HStack(spacing: 4) {
-                    Text("\(tweet.likes)")
+                    Text("\(tweetActionViewModel.tweetLikes)")
                         .font(.system(size: 14, weight: .semibold))
                     
                     Text("Likes")
@@ -71,7 +73,7 @@ struct TweetDetailsView: View {
             
             Divider()
             
-            TweetActionsView(tweet: tweet)
+            TweetActionsView(viewModel: tweetActionViewModel)
                 .padding(.horizontal, 30)
             
             Spacer()

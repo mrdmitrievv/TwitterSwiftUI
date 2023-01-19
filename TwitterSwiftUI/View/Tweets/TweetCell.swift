@@ -40,7 +40,7 @@ struct TweetCell: View {
                 }
             }
             
-            TweetActionsView(tweet: tweet)
+            TweetActionsView(viewModel: TweetActionsViewModel(tweet: tweet))
             
             Divider()
         }

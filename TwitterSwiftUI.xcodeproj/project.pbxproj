@@ -56,6 +56,7 @@
 		ABA910C6290A8FE90068548F /* FilterButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA910C5290A8FE90068548F /* FilterButtonView.swift */; };
 		ABA910C9290C32BC0068548F /* NewTweetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA910C8290C32BC0068548F /* NewTweetView.swift */; };
 		ABA910CD290C3BAD0068548F /* TextArea.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABA910CC290C3BAD0068548F /* TextArea.swift */; };
+		ABB297442979359700867184 /* TweetDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABB297432979359600867184 /* TweetDetailsViewModel.swift */; };
 		ABCF8C9829191D0200AF4512 /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABCF8C9729191D0200AF4512 /* AuthViewModel.swift */; };
 /* End PBXBuildFile section */
 
@@ -104,6 +105,7 @@
 		ABA910C5290A8FE90068548F /* FilterButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterButtonView.swift; sourceTree = "<group>"; };
 		ABA910C8290C32BC0068548F /* NewTweetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewTweetView.swift; sourceTree = "<group>"; };
 		ABA910CC290C3BAD0068548F /* TextArea.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextArea.swift; sourceTree = "<group>"; };
+		ABB297432979359600867184 /* TweetDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweetDetailsViewModel.swift; sourceTree = "<group>"; };
 		ABCF8C9729191D0200AF4512 /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -197,6 +199,7 @@
 				ABA0A15E292BDD8D00F753D9 /* TweetActionsViewModel.swift */,
 				AB8A21892936183C0016A85C /* ChatViewModel.swift */,
 				AB8A218B29365FB50016A85C /* ConversationViewModel.swift */,
+				ABB297432979359600867184 /* TweetDetailsViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -415,6 +418,7 @@
 				ABA910C4290A8FB60068548F /* ProfileActionButton.swift in Sources */,
 				ABA910C0290A8F980068548F /* UserProfileView.swift in Sources */,
 				AB863CF129070C0F00D39360 /* UserCell.swift in Sources */,
+				ABB297442979359700867184 /* TweetDetailsViewModel.swift in Sources */,
 				AB5B262E29083B8200CACA10 /* ConversationView.swift in Sources */,
 				ABA512722909925300FCA832 /* MessageView.swift in Sources */,
 				AB94BCC52915B8380072529F /* ImagePicker.swift in Sources */,
