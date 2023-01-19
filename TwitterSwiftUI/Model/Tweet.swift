@@ -15,7 +15,7 @@ struct Tweet: Identifiable {
     let userPhotoURL: String
     let caption: String
     let timestamp: Timestamp
-    let likes: Int
+    var likes: Int
     let uid: String
     
     init(dictionary: [String: Any]) {

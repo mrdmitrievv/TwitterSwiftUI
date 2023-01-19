@@ -10,13 +10,14 @@ import Firebase
 
 class TweetActionsViewModel: ObservableObject {
     
-    let tweet: Tweet
+    @Published var tweet: Tweet
     @Published var isLiked = false
     @Published var tweetLikes = 0
     private let globalQueue = DispatchQueue.global()
     
     init(tweet: Tweet) {
         self.tweet = tweet
+        self.tweetLikes = tweet.likes
         checkTweetLikes()
         checkIfTweetIsLiked()
     }
@@ -28,7 +29,10 @@ class TweetActionsViewModel: ObservableObject {
             let tweetsLikesRef = COLLECTION_TWEETS.document(self.tweet.id).collection("tweet-likes")
             let userLikesRef = COLLECTION_USERS.document(uid).collection("user-likes")
             
-            COLLECTION_TWEETS.document(self.tweet.id).updateData(["likes": self.tweet.likes + 1]) { _ in
+            print("DEBUG: self.tweet.likes is \(self.tweet.likes)")
+            print("DEBUG: self.tweetLikes is \(self.tweetLikes)")
+            
+            COLLECTION_TWEETS.document(self.tweet.id).updateData(["likes": self.tweetLikes + 1]) { _ in
                 tweetsLikesRef.document(uid).setData([:]) { _ in
                     userLikesRef.document(self.tweet.id).setData([:]) { _ in
                         self.isLiked = true
@@ -46,7 +50,10 @@ class TweetActionsViewModel: ObservableObject {
             let tweetsLikesRef = COLLECTION_TWEETS.document(self.tweet.id).collection("tweet-likes")
             let userLikesRef = COLLECTION_USERS.document(uid).collection("user-likes")
             
-            COLLECTION_TWEETS.document(self.tweet.id).updateData(["likes": self.tweet.likes - 1]) { _ in
+            print("DEBUG: self.tweet.likes is \(self.tweet.likes)")
+            print("DEBUG: self.tweetLikes is \(self.tweetLikes)")
+            
+            COLLECTION_TWEETS.document(self.tweet.id).updateData(["likes": self.tweetLikes - 1]) { _ in
                 tweetsLikesRef.document(uid).delete { _ in
                     userLikesRef.document(self.tweet.id).delete { _ in
                         self.isLiked = false
