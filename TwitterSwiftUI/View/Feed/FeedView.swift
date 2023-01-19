@@ -15,10 +15,12 @@ struct FeedView: View {
     
     var body: some View {
         
+        var sortedTweets = feedViewModel.tweets.sorted { $0.timestamp.dateValue() > $1.timestamp.dateValue() }
+        
         ZStack(alignment: .bottomTrailing) {
             ScrollView {
                 LazyVStack(spacing: 20) {
-                    ForEach(feedViewModel.tweets) { tweet in
+                    ForEach(sortedTweets) { tweet in
                         NavigationLink(destination: LazyView(TweetDetailsView(tweet: tweet))) {
                             TweetCell(tweet: tweet)
                         }

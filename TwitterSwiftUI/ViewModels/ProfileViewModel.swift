@@ -26,9 +26,12 @@ class ProfileViewModel: ObservableObject {
     
     
     func chooseTweets(_ filter: TweetFilterOptions) -> [Tweet] {
+        var sortedTweets = userTweets.sorted { $0.timestamp.dateValue() > $1.timestamp.dateValue() }
+        var sortedLikedTweets = userLikedTweets.sorted { $0.timestamp.dateValue() > $1.timestamp.dateValue() }
+        
         switch filter {
-        case .tweets: return userTweets
-        case .likes: return userLikedTweets
+        case .tweets: return sortedTweets
+        case .likes: return sortedLikedTweets
         }
     }
 }
