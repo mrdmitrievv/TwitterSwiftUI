@@ -14,9 +14,11 @@ enum SearchViewModelConfiguration {
 }
 
 class SearchViewModel: ObservableObject {
-    @Published var users = [User]()
+    
     private let config: SearchViewModelConfiguration
     private let globalQueue = DispatchQueue.global()
+    
+    @Published var users = [User]()    
     
     init(withConfig config: SearchViewModelConfiguration) {
         self.config = config

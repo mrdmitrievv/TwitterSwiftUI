@@ -11,11 +11,11 @@ struct FeedView: View {
         
     @State var newTweetText = "..."
     @State var isNewTweetViewPresented = false
-    @ObservedObject var feedViewModel = FeedViewModel()
+    @ObservedObject var feedViewModel = FeedViewModel.shared
     
     var body: some View {
-        
-        var sortedTweets = feedViewModel.tweets.sorted { $0.timestamp.dateValue() > $1.timestamp.dateValue() }
+               
+        let sortedTweets = feedViewModel.tweets.sorted { $0.timestamp.dateValue() > $1.timestamp.dateValue() }
         
         ZStack(alignment: .bottomTrailing) {
             ScrollView {

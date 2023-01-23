@@ -10,10 +10,11 @@ import Firebase
 
 class ProfileViewModel: ObservableObject {
     
+    private let globalQueue = DispatchQueue.global()
+    
     @Published var userTweets = [Tweet]()
     @Published var userLikedTweets = [Tweet]()
-    @Published var user: User
-    private let globalQueue = DispatchQueue.global()
+    @Published var user: User    
     
     init(user: User) {
         self.user = user
@@ -26,8 +27,8 @@ class ProfileViewModel: ObservableObject {
     
     
     func chooseTweets(_ filter: TweetFilterOptions) -> [Tweet] {
-        var sortedTweets = userTweets.sorted { $0.timestamp.dateValue() > $1.timestamp.dateValue() }
-        var sortedLikedTweets = userLikedTweets.sorted { $0.timestamp.dateValue() > $1.timestamp.dateValue() }
+        let sortedTweets = userTweets.sorted { $0.timestamp.dateValue() > $1.timestamp.dateValue() }
+        let sortedLikedTweets = userLikedTweets.sorted { $0.timestamp.dateValue() > $1.timestamp.dateValue() }
         
         switch filter {
         case .tweets: return sortedTweets

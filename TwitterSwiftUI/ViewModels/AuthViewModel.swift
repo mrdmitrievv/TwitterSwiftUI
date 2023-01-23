@@ -13,13 +13,14 @@ import FirebaseFirestore
 
 class AuthViewModel: ObservableObject {
     
-    @Published var userSession: Firebase.User?
-    @Published var isAuthentificating = false
-    @Published var error: Error?
-    @Published var user: User?
     private let globalQueue = DispatchQueue.global()
     
     static let shared = AuthViewModel()
+    
+    @Published var userSession: Firebase.User?
+    @Published var isAuthentificating = false
+    @Published var error: Error?
+    @Published var user: User?        
     
     init() {
         userSession = Auth.auth().currentUser

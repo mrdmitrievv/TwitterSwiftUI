@@ -11,6 +11,12 @@ import Kingfisher
 struct TweetCell: View {
     
     let tweet: Tweet
+    @ObservedObject var tweetActionViewModel: TweetActionsViewModel
+    
+    init(tweet: Tweet) {
+        self.tweet = tweet
+        self.tweetActionViewModel = TweetActionsViewModel(tweet: tweet)
+    }
     
     var body: some View {
         
@@ -40,7 +46,7 @@ struct TweetCell: View {
                 }
             }
             
-            TweetActionsView(viewModel: TweetActionsViewModel(tweet: tweet))
+            TweetActionsView(viewModel: tweetActionViewModel)
             
             Divider()
         }

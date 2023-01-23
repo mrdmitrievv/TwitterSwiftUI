@@ -10,10 +10,11 @@ import Firebase
 
 class TweetActionsViewModel: ObservableObject {
     
+    private let globalQueue = DispatchQueue.global()
+    
     @Published var tweet: Tweet
     @Published var isLiked = false
-    @Published var tweetLikes = 0
-    private let globalQueue = DispatchQueue.global()
+    @Published var tweetLikes = 0    
     
     init(tweet: Tweet) {
         self.tweet = tweet
@@ -28,9 +29,6 @@ class TweetActionsViewModel: ObservableObject {
             guard let uid = AuthViewModel.shared.userSession?.uid else { return }
             let tweetsLikesRef = COLLECTION_TWEETS.document(self.tweet.id).collection("tweet-likes")
             let userLikesRef = COLLECTION_USERS.document(uid).collection("user-likes")
-            
-            print("DEBUG: self.tweet.likes is \(self.tweet.likes)")
-            print("DEBUG: self.tweetLikes is \(self.tweetLikes)")
             
             COLLECTION_TWEETS.document(self.tweet.id).updateData(["likes": self.tweetLikes + 1]) { _ in
                 tweetsLikesRef.document(uid).setData([:]) { _ in
@@ -49,9 +47,6 @@ class TweetActionsViewModel: ObservableObject {
             guard let uid = AuthViewModel.shared.userSession?.uid else { return }
             let tweetsLikesRef = COLLECTION_TWEETS.document(self.tweet.id).collection("tweet-likes")
             let userLikesRef = COLLECTION_USERS.document(uid).collection("user-likes")
-            
-            print("DEBUG: self.tweet.likes is \(self.tweet.likes)")
-            print("DEBUG: self.tweetLikes is \(self.tweetLikes)")
             
             COLLECTION_TWEETS.document(self.tweet.id).updateData(["likes": self.tweetLikes - 1]) { _ in
                 tweetsLikesRef.document(uid).delete { _ in

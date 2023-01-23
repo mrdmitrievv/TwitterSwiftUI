@@ -9,9 +9,11 @@ import SwiftUI
 import Firebase
 
 class ConversationViewModel: ObservableObject {
-    @Published var recentMessages = [Message]()
+        
     private var recentMessagesDictionary = [String: Message]()
     private let globalQueue = DispatchQueue.global()
+    
+    @Published var recentMessages = [Message]()    
     
     init() {
         fetchMessages()

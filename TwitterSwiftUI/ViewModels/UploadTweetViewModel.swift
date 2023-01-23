@@ -10,8 +10,9 @@ import Firebase
 
 class UploadTweetViewModel: ObservableObject {
     
-    @Binding var isPresented: Bool
     private let globalQueue = DispatchQueue.global()
+    
+    @Binding var isPresented: Bool    
     
     init(isPresented: Binding<Bool>) {
         self._isPresented = isPresented

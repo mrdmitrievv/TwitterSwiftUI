@@ -11,9 +11,10 @@ import Firebase
 
 class ChatViewModel: ObservableObject {
     
-    let user: User
-    @Published var messages = [Message]()
     private let globalQueue = DispatchQueue.global()
+    
+    let user: User
+    @Published var messages = [Message]()    
     
     init(_ user: User) {
         self.user = user

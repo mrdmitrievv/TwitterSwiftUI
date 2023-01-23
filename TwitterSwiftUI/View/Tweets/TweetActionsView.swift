@@ -36,6 +36,7 @@ struct TweetActionsView: View {
                     .font(.system(size: 16))
                     .foregroundColor(viewModel.isLiked ? .red : .gray)
                     .frame(width: 32, height: 32)
+                    .onAppear(perform: viewModel.checkIfTweetIsLiked)
             }
                         
             Spacer()

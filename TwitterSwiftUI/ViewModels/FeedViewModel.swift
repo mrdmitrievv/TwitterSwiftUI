@@ -9,9 +9,11 @@ import Foundation
 
 class FeedViewModel: ObservableObject {
     
-    @Published var tweets = [Tweet]()
     private let globalQueue = DispatchQueue.global()
+    
     static let shared = FeedViewModel()
+    
+    @Published var tweets = [Tweet]()
     
     init() {
         fetchTweets()
