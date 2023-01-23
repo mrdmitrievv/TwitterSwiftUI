@@ -34,8 +34,9 @@ class AuthViewModel: ObservableObject {
                     print("DEBUG: Error with signIn: \(error.localizedDescription)")
                     return
                 }
-                
-                self.userSession = result?.user
+                DispatchQueue.main.async {
+                    self.userSession = result?.user
+                }
                 self.fetchUser()
             }
         }
@@ -74,7 +75,9 @@ class AuthViewModel: ObservableObject {
                         ]
                         
                         COLLECTION_USERS.document(user.uid).setData(data) { _ in
-                            self.userSession = user
+                            DispatchQueue.main.async {
+                                self.userSession = user
+                            }
                             self.fetchUser()
                         }
                         
@@ -98,7 +101,9 @@ class AuthViewModel: ObservableObject {
             
             COLLECTION_USERS.document(uid).getDocument { snapshot, _ in
                 guard let data = snapshot?.data() else { return }
-                self.user = User(dictionary: data)
+                DispatchQueue.main.async {
+                    self.user = User(dictionary: data)
+                }                
             }
         }
     }

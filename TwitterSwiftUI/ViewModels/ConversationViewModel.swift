@@ -38,8 +38,9 @@ class ConversationViewModel: ObservableObject {
                         guard let data = snapshot?.data() else { return }
                         let user = User(dictionary: data)
                         self.recentMessagesDictionary[uid] = Message(user: user, dictionary: messageData)
-                        
-                        self.recentMessages = Array(self.recentMessagesDictionary.values)
+                        DispatchQueue.main.async {
+                            self.recentMessages = Array(self.recentMessagesDictionary.values)
+                        }                        
                     }
                 }
             }

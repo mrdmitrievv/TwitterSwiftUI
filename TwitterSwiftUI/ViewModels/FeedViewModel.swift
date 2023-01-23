@@ -24,8 +24,9 @@ class FeedViewModel: ObservableObject {
         globalQueue.async {
             COLLECTION_TWEETS.getDocuments { snapshot, _ in
                 guard let documents = snapshot?.documents else { return }
-                
-                self.tweets = documents.map({ Tweet(dictionary: $0.data()) })
+                DispatchQueue.main.async {
+                    self.tweets = documents.map({ Tweet(dictionary: $0.data()) })
+                }                
             }
         }
     }

@@ -33,8 +33,14 @@ class SearchViewModel: ObservableObject {
                 let users = documents.map({ User(dictionary: $0.data()) })
                 
                 switch config {
-                case .search: self.users = users
-                case .newMessage: self.users = users.filter({ !$0.isCurrentUser })
+                case .search:
+                    DispatchQueue.main.async {
+                        self.users = users
+                    }
+                case .newMessage:
+                    DispatchQueue.main.async {
+                        self.users = users.filter({ !$0.isCurrentUser })
+                    }                    
                 }
             }
         }        

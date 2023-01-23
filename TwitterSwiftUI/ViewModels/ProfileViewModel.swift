@@ -50,7 +50,9 @@ extension ProfileViewModel {
             
             followingRef.document(self.user.id).setData([:]) { _ in
                 followersRef.document(currentUid).setData([:]) { _ in
-                    self.user.isFollowed = true
+                    DispatchQueue.main.async {
+                        self.user.isFollowed = true
+                    }
                 }
             }
         }
@@ -64,7 +66,9 @@ extension ProfileViewModel {
             
             followingRef.document(self.user.id).delete { _ in
                 followersRef.document(currentUid).delete { _ in
-                    self.user.isFollowed = false
+                    DispatchQueue.main.async {
+                        self.user.isFollowed = false
+                    }
                 }
             }
         }
@@ -78,7 +82,9 @@ extension ProfileViewModel {
             
             followingRef.document(self.user.id).getDocument { snapshot, _ in
                 guard let isFollowed = snapshot?.exists else { return }
-                self.user.isFollowed = isFollowed
+                DispatchQueue.main.async {
+                    self.user.isFollowed = isFollowed
+                }
             }
         }
     }
@@ -87,7 +93,9 @@ extension ProfileViewModel {
         globalQueue.async {
             COLLECTION_TWEETS.whereField("uid", isEqualTo: self.user.id).getDocuments { snapshot, _ in
                 guard let documents = snapshot?.documents else { return }
-                self.userTweets = documents.map({ Tweet(dictionary: $0.data()) })
+                DispatchQueue.main.async {
+                    self.userTweets = documents.map({ Tweet(dictionary: $0.data()) })
+                }
             }            
         }
     }
@@ -102,8 +110,9 @@ extension ProfileViewModel {
                     COLLECTION_TWEETS.document(tweetID).getDocument { snapshot, _ in
                         guard let data = snapshot?.data() else { return }
                         let tweet = Tweet(dictionary: data)
-                        
-                        self.userLikedTweets.append(tweet)
+                        DispatchQueue.main.async {
+                            self.userLikedTweets.append(tweet)
+                        }
                     }
                 }
             }
@@ -121,7 +130,9 @@ extension ProfileViewModel {
                 followingRef.getDocuments { snapshot, _ in
                     guard let followingCount = snapshot?.documents.count else { return }
                     
-                    self.user.stats = UserStats(followers: followersCount, following: followingCount)
+                    DispatchQueue.main.async {
+                        self.user.stats = UserStats(followers: followersCount, following: followingCount)
+                    }                    
                 }
             }
         }

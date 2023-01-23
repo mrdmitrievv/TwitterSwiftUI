@@ -33,7 +33,9 @@ class TweetActionsViewModel: ObservableObject {
             COLLECTION_TWEETS.document(self.tweet.id).updateData(["likes": self.tweetLikes + 1]) { _ in
                 tweetsLikesRef.document(uid).setData([:]) { _ in
                     userLikesRef.document(self.tweet.id).setData([:]) { _ in
-                        self.isLiked = true
+                        DispatchQueue.main.async {
+                            self.isLiked = true
+                        }
                         self.checkTweetLikes()
                     }
                 }
@@ -51,7 +53,9 @@ class TweetActionsViewModel: ObservableObject {
             COLLECTION_TWEETS.document(self.tweet.id).updateData(["likes": self.tweetLikes - 1]) { _ in
                 tweetsLikesRef.document(uid).delete { _ in
                     userLikesRef.document(self.tweet.id).delete { _ in
-                        self.isLiked = false
+                        DispatchQueue.main.async {
+                            self.isLiked = false
+                        }
                         self.checkTweetLikes()
                     }
                 }
@@ -67,7 +71,9 @@ class TweetActionsViewModel: ObservableObject {
             
             userLikesRef.document(self.tweet.id).getDocument { snapshot, _ in
                 guard let isLiked = snapshot?.exists else { return }
-                self.isLiked = isLiked
+                DispatchQueue.main.async {
+                    self.isLiked = isLiked
+                }
             }
         }
     }
@@ -76,7 +82,9 @@ class TweetActionsViewModel: ObservableObject {
         globalQueue.async {
             COLLECTION_TWEETS.document(self.tweet.id).collection("tweet-likes").getDocuments { snapshot, _ in
                 guard let likes = snapshot?.count else { return }
-                self.tweetLikes = likes
+                DispatchQueue.main.async {
+                    self.tweetLikes = likes
+                }                
             }
         }
     }
