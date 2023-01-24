@@ -38,7 +38,8 @@ class UploadTweetViewModel: ObservableObject {
                 print("DEBUG: Successfully uploaded tweet..")
                 DispatchQueue.main.async {
                     self.isPresented = false
-                }                
+                }
+                
             }
         }        
     }
